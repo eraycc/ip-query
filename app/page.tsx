@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Loader2, Globe, Hash, Server, MapPin, Flag, Building, Map } from 'lucide-react'
+import { Loader2, Globe, Hash, Server, MapPin, Flag, Building, Map , Network } from 'lucide-react'
 
 interface IPInfo {
   ip?: string
@@ -27,6 +27,8 @@ interface IPInfo {
     name?: string
   }
   regions?: string[]
+  regions_short?: string[]
+  type?: string
 }
 
 export default function Home() {
@@ -110,6 +112,8 @@ export default function Home() {
                 <InfoItem icon={Flag} label="国家" value={ipInfo.country ? `${ipInfo.country.name} (${ipInfo.country.code})` : 'N/A'} />
                 <InfoItem icon={Building} label="注册国家" value={ipInfo.registered_country ? `${ipInfo.registered_country.name} (${ipInfo.registered_country.code})` : 'N/A'} />
                 <InfoItem icon={Map} label="地区" value={ipInfo.regions && ipInfo.regions.length > 0 ? ipInfo.regions.join(', ') : 'N/A'} />
+                <InfoItem icon={Map} label="地区简称" value={ipInfo.regions_short && ipInfo.regions_short.length > 0 ? ipInfo.regions_short.join(', ') : 'N/A'} />
+                <InfoItem icon={Network} label="IP类型" value={ipInfo.type || 'N/A'} />
               </div>
             </div>
           )}
