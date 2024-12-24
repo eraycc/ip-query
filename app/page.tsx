@@ -45,7 +45,7 @@ export default function Home() {
     setIsLoading(true)
     setError('')
     try {
-      const response = await fetch(`https://blog.9sd.top/api/ip/index.php?ip=${ip}`)
+      const response = await fetch(`${process.env.IP_QUERY_URL}${ip}`)
       if (!response.ok) {
         throw new Error('Failed to fetch IP information')
       }
