@@ -43,7 +43,7 @@ export default function Home() {
     setIsLoading(true)
     setError('')
     try {
-      const response = await fetch(`https://erayip-api.hf.space/${ip}`)
+      const response = await fetch(`https://blog.9sd.top/api/ip/index.php?ip=${ip}`)
       if (!response.ok) {
         throw new Error('Failed to fetch IP information')
       }
