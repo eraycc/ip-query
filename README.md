@@ -59,6 +59,6 @@ if (isValidIP($ip)) {
 # vercel部署
 - 首先fork该项目，按上述内容部署好IP查询api，并修改`app/page.tsx`内的api地址为你部署的api地址
 - 访问[vercel官网](https://vercel.com/)选择Github注册或登陆
-- 在vercel内的管理面板导入该项目，无需其他配置，直接点击deploy
+- 在vercel内的管理面板导入该项目，需要配置环境变量`NEXT_PUBLIC_IPQUERYURL`，`NEXT_PUBLIC_IPQUERYURL`值说明：如果你是抱脸部署，不使用php反代，则直接填写`https://xxx.hf.space/`注意末尾带`/`，如果是使用php代理，则填写`https://your-domain/your-php-file-name.php?ip=`，然后即可点击部署，部署完成后到setting内环境变量检查`NEXT_PUBLIC_IPQUERYURL`是否添加成功，如果没有添加可以手动添加完成后再redeploy
 - 等待部署完成，绑定自己的域名即可enjoy
 ### 本项目部分代码使用ai生成，IP查询后端由其它开源项目提供，该项目仅供学习测试或参考，请勿用于正式生产环境部署！
