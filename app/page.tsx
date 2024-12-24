@@ -45,7 +45,7 @@ export default function Home() {
     setIsLoading(true)
     setError('')
     try {
-      const response = await fetch(`${process.env.IP_QUERY_URL}${ip}`)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_IPQUERYURL}${ip}`)
       if (!response.ok) {
         throw new Error('Failed to fetch IP information')
       }
