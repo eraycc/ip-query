@@ -55,7 +55,7 @@ if (isValidIP($ip)) {
 ?>
 ```
 # 修改IP-Query-FrontEnd代理地址：
-请在`app/page.tsx`内修改你部署的hf或者php代理后的api地址
+vercel部署需要配置环境变量`NEXT_PUBLIC_IPQUERYURL`，详情参考vercel部署
 # vercel部署
 - 首先fork该项目，按上述内容部署好IP查询api，并修改`app/page.tsx`内的api地址为你部署的api地址
 - 访问[vercel官网](https://vercel.com/)选择Github注册或登陆
